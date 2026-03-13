@@ -1,0 +1,159 @@
+---
+const { title = "Enxod3rz | Software Studio", description = "Estudio de desarrollo de aplicaciones móviles modernas." } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+    <style is:global>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --bg: #0a0a0f;
+            --surface: #12121a;
+            --surface2: #1a1a26;
+            --border: #ffffff14;
+            --border2: #ffffff22;
+            --text: #f0f0f8;
+            --muted: #8888a8;
+            --accent: #4f7fff;
+            --accent2: #7c4fff;
+            --green: #22c98a;
+            --font: 'Space Grotesk', sans-serif;
+            --mono: 'JetBrains Mono', monospace;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font);
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        main { flex-grow: 1; }
+
+        /* Nav */
+        .site-nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            padding: 20px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            backdrop-filter: blur(20px);
+            background: #0a0a0f88;
+            border-bottom: 0.5px solid var(--border);
+        }
+        .nav-logo {
+            font-family: var(--mono);
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text);
+            letter-spacing: -0.5px;
+            text-decoration: none;
+        }
+        .nav-logo .accent { color: var(--accent); }
+        .nav-logo .green  { color: var(--green);  }
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+        .nav-links a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color .2s;
+        }
+        .nav-links a:hover { color: var(--text); }
+        .nav-cta {
+            background: var(--accent);
+            color: #fff;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 10px 22px;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: all .2s;
+            font-family: var(--font);
+        }
+        .nav-cta:hover { background: #3d6ee8; transform: translateY(-1px); }
+
+        /* Footer */
+        .site-footer {
+            position: relative;
+            z-index: 1;
+            padding: 40px;
+            border-top: 0.5px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .footer-left { display: flex; flex-direction: column; gap: 8px; }
+        .footer-logo {
+            font-family: var(--mono);
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--muted);
+            text-decoration: none;
+        }
+        .footer-logo .accent { color: var(--accent); }
+        .footer-logo .green  { color: var(--green);  }
+        .footer-links { display: flex; gap: 20px; }
+        .footer-links a {
+            font-size: 13px;
+            color: var(--muted);
+            text-decoration: none;
+            transition: color .2s;
+        }
+        .footer-links a:hover { color: var(--text); }
+        .footer-copy { font-size: 13px; color: var(--muted); }
+    </style>
+</head>
+<body>
+
+    <nav class="site-nav">
+        <a href="/" class="nav-logo">Enx<span class="accent">od</span>3rz<span class="green">_</span></a>
+        <ul class="nav-links">
+            <li><a href="/#filosofia">Stack</a></li>
+            <li><a href="/#proyectos">Proyectos</a></li>
+            <li><a href="/#contacto">Contacto</a></li>
+        </ul>
+        <a href="mailto:enxod3rz@gmail.com" class="nav-cta">Hablemos →</a>
+    </nav>
+
+    <main>
+        <slot />
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-left">
+            <a href="/" class="footer-logo">Enx<span class="accent">od</span>3rz<span class="green">_</span></a>
+            <div class="footer-links">
+                <a href="/privacy-policy">Política de Privacidad</a>
+            </div>
+        </div>
+        <p class="footer-copy">© 2026 Enxod3rz. Hecho con obsesión por el detalle.</p>
+    </footer>
+
+</body>
+</html>
