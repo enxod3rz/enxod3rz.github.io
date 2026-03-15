@@ -139,7 +139,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 <div class="glow-orb orb2"></div>
 
 <nav>
-  <a href="/" class="logo">Enx<span>od</span>3rz<span style="color:var(--green)">_</span></a>
+  <!-- <a href="/" class="logo">Enx<span>od</span>3rz<span style="color:var(--green)">_</span></a>-->
+  <div style="display: flex; align-items: center;">
+    <img src="/enxod3rz_logo.png" alt="Enxod3rz Logo" style="height: 40px;">
+  </div>
   <ul class="nav-links">
     <li><a href="#filosofia">Stack</a></li>
     <li><a href="#proyectos">Proyectos</a></li>
@@ -280,7 +283,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </div>
     <div class="project-right">
 			<div class="phone-mockup-image">
-				<img src="/public/capturaapp.png" alt="Captura de pantalla de la app LoTome">
+				<img src="/capturaapp.png" alt="Captura de pantalla de la app LoTome">
         <!-- <div class="phone-screen">
           <div class="app-header">
             <div class="app-icon"></div>
@@ -329,10 +332,5 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <p style="font-size:12px;color:var(--muted);margin-top:24px;font-family:var(--mono)">* No cobramos por la primera consulta técnica.</p>
   </div>
 </section>
-
-<footer>
-  <a href="/" class="footer-logo">Enx<span>od</span>3rz<span style="color:var(--green)">_</span></a>
-  <div class="footer-copy">© 2026 · Hecho con ಥ_ಥ y mucho mate.</div>
-</footer>
 
 </BaseLayout>
